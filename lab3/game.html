@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Крестики-нолики на javascript</title>
+  <meta charset="utf-8">
+<style>
+.ai {
+  background-image: url('./zero.png');
+}
+.container {
+  margin: 50px auto;
+  width: 170px;
+}
+.cell {
+  background-color: white;
+  border: 2px solid black;
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+.cell:hover {
+  border-color: red;
+}
+.player {
+  background-image: url('./x.png');
+}</style>
+</head>
+<body>
+  <div class="container">
+    <div class="table">
+      <div class="cell" id="0" onclick="move(0, 'player')"></div>
+      <div class="cell" id="1" onclick="move(1, 'player')"></div>
+      <div class="cell" id="2" onclick="move(2, 'player')"></div>
+      <div class="cell" id="3" onclick="move(3, 'player')"></div>
+      <div class="cell" id="4" onclick="move(4, 'player')"></div>
+      <div class="cell" id="5" onclick="move(5, 'player')"></div>
+      <div class="cell" id="6" onclick="move(6, 'player')"></div>
+      <div class="cell" id="7" onclick="move(7, 'player')"></div>
+      <div class="cell" id="8" onclick="move(8, 'player')"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="tik-tok.js"></script>
+</body>
+</html>
