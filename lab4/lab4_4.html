@@ -1,0 +1,262 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="jquery_3.2.1.min.js"></script>
+<script type="text/javascript">
+
+var answers = {
+
+	1:2,
+	2:1,
+	3:2,
+	4:1,
+	5:3,
+	6:3,
+	7:1,
+	8:1,
+	9:3,
+	10:3,
+	11:1,
+	12:1,
+	13:1,
+	14:2,
+	15:2
+};
+
+var counter = 0;
+
+$(document).ready(function(){
+
+	$('.tests').addClass('active');
+	$('.tests > ul').eq(0).addClass('selected');
+
+	$('.tests > ul:not(.result) > li:not(:first-child)').on('click',function(){
+
+		var index = $(this).index();
+		var question = $(this).parent().index()+1;
+
+		if( answers[question]==index ){
+
+			counter++;
+
+			$('.tests > ul.result > li').eq(1).html( counter+' / '+($('.tests > ul').length-1) );
+		}
+
+		$(this).parent().removeClass('selected');
+		$('.tests > ul').eq(question).addClass('selected');
+	});
+
+	$('.tests > ul.result > li').eq(2).on('click',function(){
+
+		counter = 0;
+
+		$('.tests > ul.result').removeClass('selected');
+		$('.tests > ul').eq(0).addClass('selected');
+	});
+});
+
+</script>
+
+<style type="text/css">
+
+body{
+
+	background-color: #eee;
+}
+
+.tests{
+
+	width: 600px;
+	height: 400px;
+
+	position: absolute;
+
+	top: calc(50% - 250px);
+	left: calc(50% - 300px);
+
+	border: 1px solid #ccc;
+
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow:    0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+	box-shadow:         0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+
+	background-color: #fff;
+}
+
+.tests:not(.active) > ul:not(:first-child),
+.tests.active > ul:not(.selected){
+
+	display: none;
+}
+
+.tests > ul{
+
+	display: block;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+
+	text-align: center;
+}
+
+.tests > ul > li{
+
+	display: block;
+
+	margin-bottom: 30px;
+}
+
+.tests > ul > li:first-child{
+
+	font-size: 36px;
+
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+.tests > ul.result > li:nth-child(2),
+.tests > ul:not(.result) > li:first-child{
+
+	color: blue;
+}
+
+.tests > ul > li:not(:first-child){
+
+	font-size: 28px;
+	cursor: pointer;
+}
+
+.tests > ul.result > li:last-child:hover,
+.tests > ul:not(.result) > li:not(:first-child):hover{
+
+	color: red;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="tests">
+
+	<ul>
+		<li>Lithium</li>
+		<li>Red Hot Chili Peppers</li>
+		<li>Nirvana</li>
+		<li>Killers</li>
+	</ul>
+
+	<ul>
+		<li>house of the rising sun</li>
+		<li>The Animals</li>
+		<li>Queen</li>
+		<li>Linkin Park</li>
+	</ul>
+
+	<ul>
+		<li>Yellow submarine</li>
+		<li>Rolling Stones</li>
+		<li>The Beatles</li>
+		<li>Aerosmith</li>
+	</ul>
+
+	<ul>
+		<li>Bohemian Rhapsody</li>
+		<li>Queen</li>
+		<li>AC/DC</li>
+		<li>The Beatles</li>
+	</ul>
+
+	<ul>
+		<li>Stairway to Heaven</li>
+		<li>AC/DC</li>
+		<li>Nirvana</li>
+		<li>Led Zeppelin</li>
+	</ul>
+
+	<ul>
+		<li>The Show Must Go On</li>
+		<li>Led Zeppelin</li>
+		<li>Scorpions</li>
+		<li>Queen</li>
+	</ul>
+
+	<ul>
+		<li>Crazy</li>
+		<li>Aerosmith</li>
+		<li>The Animals</li>
+		<li>Califonia</li>
+	</ul>
+
+	<ul>
+		<li>Child in Time</li>
+		<li>Deep Purple</li>
+		<li>The Animals</li>
+		<li>The Beatles</li>
+	</ul>
+
+	<ul>
+		<li>T.N.T.</li>
+		<li>Linkin Park</li>
+		<li>Deep Purple</li>
+		<li>AC/DC</li>
+	</ul>
+
+	<ul>
+		<li>Smoke on the water</li>
+		<li>One Stripes</li>
+		<li>The Animals</li>
+		<li>Deep Purple</li>
+	</ul>
+
+	<ul>
+		<li>Seven nation army</li>
+		<li>One Stripes</li>
+		<li>Queen</li>
+		<li>The Beatles</li>
+	</ul>
+
+	<ul>
+		<li>Carrie</li>
+		<li>Europe</li>
+		<li>Linkin Park</li>
+		<li>Red Hot Chili Peppers</li>
+	</ul>
+
+	<ul>
+		<li>Wind of Change</li>
+		<li>Scorpions</li>
+		<li>Europe</li>
+		<li>One stripes</li>
+	</ul>
+
+	<ul>
+		<li>High Voltage</li>
+		<li>Eagles</li>
+		<li>AC/DC</li>
+		<li>Aerosmith</li>
+	</ul>
+
+	<ul>
+		<li>Hotel Califonia</li>
+		<li>Nirvana</li>
+		<li>Eagles</li>
+		<li>The Animals</li>
+	</ul>
+
+	<ul class="result">
+
+		<li>Результат:</li>
+		<li></li>
+		<li>Пройти заново</li>
+	</ul>
+</div>
+
+
+
+</body>
+</html>
