@@ -22,13 +22,13 @@ function getPi(method) {
 
 		case 2:
 			return {
-				'name': 'Формула Виета',
+				'name': 'Ряды Лейбница',
 				'compute': function() {
-					var pi = 2;
-					var m = 0;
-					for(i = 0; i < 10; i++) {
-						m = Math.sqrt(m + 2);
-						pi *= 2/m;
+					var pi = 0;
+					var c = 0;
+					for(i = 1; i <=1000; i++) {
+						c = math.pow(-1, i);
+						pi += (4*c) / (2*i+1);
 					}
 					return pi;
 				}
@@ -36,12 +36,14 @@ function getPi(method) {
 
 		case 3:
 			return {
-				'name': 'Произведения (1-я формула)',
+				'name': 'Произведения (6-я формула)',
 				'compute': function() {
-					var pi = 3 * Math.sqrt(3) / 2;
-					for(i = 1; i < 10; i++) {
-						pi *= (i * i) / (i * i - 1/9);
-					}
+					var pi = 0;
+					var k = 1;
+					for(k = 1; i <=100; i++) {
+						k = pow(k, 2)/(pow(k,2)-pow((5/6),2));
+						}
+					pi=6/5*1/2*k;
 					return pi;
 				}
 			};
